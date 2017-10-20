@@ -1,5 +1,5 @@
-# project
-##Состав проект-команды:
+# DREAM_BOT_STANKIN
+#Состав проект-команды:
 
 Координатор/Дипломат - [Павел Субботин](https://github.com/paulsub) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/) | [Статья](https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964))
 
