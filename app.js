@@ -1,5 +1,6 @@
 var TelegramBot = require('node-telegram-bot-api');
 var fs = require('fs');
+const osmosis = require('osmosis');
 var token = '447746908:AAFOv0sCAjOo8PwSBrvf8vdkGOnssFgkzd0';
 var bot = new TelegramBot(token, {polling: true});
 
@@ -11,6 +12,7 @@ var options = {
           [{ text: '/напомни %заметка% в hh:mm', callback_data: '/напомни' }],
           [{ text: '/заметки', callback_data: '/заметки' }],
           [{ text: '/удалить', callback_data: '/удалить' }],
+          [{ text: '/курс', callback_data: '/курс' }],
         ]
       })
     };
@@ -26,6 +28,19 @@ bot.onText(/\/напомни (.+) в (.+)/, function (msg, match) {
       console.log(userId, text, time);
     });
 
+bot.onText(/\/курс/, function (msg, match) {
+  var userId = msg.from.id;
+  osmosis
+    .get('www.yandex.ru')
+    .find('.inline-stocks')
+    .set({
+      'kurs': 'span .inline-stocks__value_inner'
+    })
+    .data(function(data) {
+      // console.log('Курс $: ' + data.kurs);
+      bot.sendMessage(userId, 'Курс доллара: ' + data.kurs + ' рублей');
+   });
+});
 
 
 bot.onText(/\/заметки/, function (msg, match) {
@@ -52,7 +67,7 @@ bot.onText(/\/удалить/, function (msg, match) {
 });
 
 
-bot.onText(/\/help/, function (msg, match) {
+bot.onText(/\/хелп/, function (msg, match) {
     bot.sendMessage(msg.chat.id, 'Список команд:', options);
 });
 
@@ -65,8 +80,3 @@ setInterval(function(){
                 }
             }
     },1000);
-
-
-
-
-
