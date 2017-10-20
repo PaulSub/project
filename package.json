@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dreamteamstankin/project#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.28.0"
+    "node-telegram-bot-api": "^0.28.0",
+    "osmosis": "^1.1.4"
   }
 }
