@@ -5,6 +5,7 @@ var token = '447746908:AAFOv0sCAjOo8PwSBrvf8vdkGOnssFgkzd0';
 var bot = new TelegramBot(token, {polling: true});
 
 var notes = [];
+var mess = [];
 
 var options = {
       reply_markup: JSON.stringify({
@@ -13,6 +14,8 @@ var options = {
           [{ text: '/заметки', callback_data: '/заметки' }],
           [{ text: '/удалить', callback_data: '/удалить' }],
           [{ text: '/курс', callback_data: '/курс' }],
+          [{ text: '/запомни', callback_data: '/запомни' }],
+          [{ text: '/напомни', callback_data: '/напомни' }]
         ]
       })
     };
@@ -27,6 +30,18 @@ bot.onText(/\/напомни (.+) в (.+)/, function (msg, match) {
       bot.sendMessage(userId, 'Отлично! Жди, я за тобой приду');
       console.log(userId, text, time);
     });
+
+bot.onText(/\/запомни (.+)/, function (msg, match) {
+      var userId = msg.from.id;
+      var text = match[1];
+      // var time = match[2];
+    
+      mess.push( { 'uid':userId, 'text':text } );
+      
+      bot.sendMessage(userId, 'Отлично! Я запомнил, по команде /напомни, я напомню');
+      console.log(userId, text);
+    });
+
 
 bot.onText(/\/курс/, function (msg, match) {
   var userId = msg.from.id;
@@ -57,6 +72,21 @@ for (var i = 0; i < notes.length; i++){
   
 });
 
+
+bot.onText(/\/напомни/, function (msg, match) {
+  var userId = msg.from.id;
+  console.log(userId);
+  if (mess.length == 0) {
+        bot.sendMessage(userId, 'У вас нет заметок');
+  }
+  for (var i = 0; i < mess.length; i++){
+      bot.sendMessage(userId, mess[i]['text']);
+  }
+  
+});
+
+
+
 bot.onText(/\/удалить/, function (msg, match) {
         var userId = msg.from.id;
   for (var i = 0; i < notes.length; i++){    
@@ -80,3 +110,6 @@ setInterval(function(){
                 }
             }
     },1000);
+
+
+
