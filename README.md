@@ -14,4 +14,8 @@
 Творец - [Мария Бартель](https://github.com/mariabartel) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Bartel/) | [Статья](https://github.com/stankin/oop/wiki/%D0%A2%D0%B5%D0%B3%D0%B8-HTML.-Style))
 
 [Модуль для работы с телегам ботом node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
+
 [Модуль для парсигна сайта yadnex.ru](https://github.com/rchipka/node-osmosis)
+
+
+Данный бот позволяет создавать 
