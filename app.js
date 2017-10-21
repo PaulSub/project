@@ -15,7 +15,8 @@ var options = {
           [{ text: '/удалить', callback_data: '/удалить' }],
           [{ text: '/курс', callback_data: '/курс' }],
           [{ text: '/запомни', callback_data: '/запомни' }],
-          [{ text: '/напомни', callback_data: '/напомни' }]
+          [{ text: '/напоминания', callback_data: '/напоминания' }],
+          [{ text: '/удалитьнапоминания', callback_data: '/удалитьнапоминания' }]
         ]
       })
     };
@@ -43,21 +44,6 @@ bot.onText(/\/запомни (.+)/, function (msg, match) {
     });
 
 
-bot.onText(/\/курс/, function (msg, match) {
-  var userId = msg.from.id;
-  osmosis
-    .get('www.yandex.ru')
-    .find('.inline-stocks')
-    .set({
-      'kurs': 'span .inline-stocks__value_inner'
-    })
-    .data(function(data) {
-      // console.log('Курс $: ' + data.kurs);
-      bot.sendMessage(userId, 'Курс доллара: ' + data.kurs + ' рублей');
-   });
-});
-
-
 bot.onText(/\/заметки/, function (msg, match) {
   var userId = msg.from.id;
 
@@ -73,14 +59,14 @@ for (var i = 0; i < notes.length; i++){
 });
 
 
-bot.onText(/\/напомни/, function (msg, match) {
+bot.onText(/\/напоминания/, function (msg, match) {
   var userId = msg.from.id;
   console.log(userId);
   if (mess.length == 0) {
         bot.sendMessage(userId, 'У вас нет заметок');
   }
   for (var i = 0; i < mess.length; i++){
-      bot.sendMessage(userId, mess[i]['text']);
+      bot.sendMessage(userId, ''+ mess[i]['text']);
   }
   
 });
@@ -96,9 +82,32 @@ bot.onText(/\/удалить/, function (msg, match) {
   bot.sendMessage(userId, 'Записи удалены');
 });
 
+bot.onText(/\/удалитьнапоминание/, function (msg, match) {
+        var userId = msg.from.id;
+  for (var i = 0; i < mess.length; i++){    
+    mess.splice(i,1);
+
+  };
+  bot.sendMessage(userId, 'Записи удалены');
+});
+
 
 bot.onText(/\/хелп/, function (msg, match) {
     bot.sendMessage(msg.chat.id, 'Список команд:', options);
+});
+
+bot.onText(/\/курс/, function (msg, match) {
+  var userId = msg.from.id;
+  osmosis
+    .get('www.yandex.ru')
+    .find('.inline-stocks')
+    .set({
+      'kurs': 'span .inline-stocks__value_inner'
+    })
+    .data(function(data) {
+      // console.log('Курс $: ' + data.kurs);
+      bot.sendMessage(userId, 'Курс доллара: ' + data.kurs + ' рублей');
+   });
 });
 
 setInterval(function(){
