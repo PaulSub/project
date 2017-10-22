@@ -1,5 +1,5 @@
 # DREAM_BOT_STANKIN
-# Ник бота в telegram: @Stankin1703_bot [Ссылка](https://t.me/@Stankin1703_bot)
+## Ник бота в telegram: @Stankin1703_bot [Ссылка](https://t.me/@Stankin1703_bot)
 
 
 ## Состав проект-команды:
