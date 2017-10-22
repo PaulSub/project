@@ -19,3 +19,17 @@
 
 
 Данный бот позволяет создавать 
+## Команды
+var options = {
+      reply_markup: JSON.stringify({
+        inline_keyboard: [
+          [{ text: '/напомни %заметка% в hh:mm', callback_data: '/напомни' }],
+          [{ text: '/заметки', callback_data: '/заметки' }],
+          [{ text: '/удалить', callback_data: '/удалить' }],
+          [{ text: '/курс', callback_data: '/курс' }],
+          [{ text: '/запомни', callback_data: '/запомни' }],
+          [{ text: '/напоминания', callback_data: '/напоминания' }],
+          [{ text: '/удалитьнапоминания', callback_data: '/удалитьнапоминания' }]
+        ]
+      })
+    };
