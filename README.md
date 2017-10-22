@@ -1,4 +1,4 @@
-### DREAM_BOT_STANKIN
+# DREAM_BOT_STANKIN
 ## Состав проект-команды:
 
 Координатор/Дипломат - [Павел Субботин](https://github.com/paulsub) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/) | [Статья](https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964))
@@ -19,19 +19,23 @@
 
 
 Данный бот позволяет создавать 
-## Команды
-```javascript
-var options = {
-      reply_markup: JSON.stringify({
-        inline_keyboard: [
-          [{ text: '/напомни %заметка% в hh:mm', callback_data: '/напомни' }],
-          [{ text: '/заметки', callback_data: '/заметки' }],
-          [{ text: '/удалить', callback_data: '/удалить' }],
-          [{ text: '/курс', callback_data: '/курс' }],
-          [{ text: '/запомни', callback_data: '/запомни' }],
-          [{ text: '/напоминания', callback_data: '/напоминания' }],
-          [{ text: '/удалитьнапоминания', callback_data: '/удалитьнапоминания' }]
-        ]
-      })
-    };
+
+## Установка
+Для начала понадобится установить Node.js [Официальный сайт](https://nodejs.org/en/)
+
+Затем необходимо скачать репозиторий:
+```bash
+git clone https://github.com/dreamteamstankin/project
+```
+После скачивания необходимо установить все зависимости:
+```bash
+npm install
+```
+После установки необходимо запустить работу сервера, для того чтобы бот пнимал запросы и отвечал пользователю, это можно сделать стандартной командой 
+```bash
+node app.js
+```
+либо [nodemon](https://github.com/remy/nodemon), который отслеживает изменений файла и перезапускает при необходимости сервер
+```bash
+nodemon app.js
 ```
