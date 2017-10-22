@@ -3,7 +3,7 @@
 
 Координатор/Дипломат - [Павел Субботин](https://github.com/paulsub) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Subbotin/) | [Статья](https://github.com/stankin/oop/wiki/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964))
 
-Реализатор/Исполнитель - [Леонтьев Иван](https://github.com/ivanleontev) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/leontev/) | [Статья](https://github.com/stankin/oop/wiki/%D0%A2%D1%8D%D0%B3%D0%B8-HTML.--a))
+Реализатор/Исполнитель - [Леонтьев Иван](https://github.com/ivanleontev) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/leontev/) | [Статья](https://github.com/stankin/oop/wiki/%D0%A2%D1%8D%D0%B3%D0%B8-HTML.--a)) (Стаья Promise)[https://github.com/stankin/inet-2017/wiki/Promise]
 
 Исследователь - [Максим Гуц](https://github.com/MaximGuts) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Guts/) | [Статья](https://github.com/stankin/oop/wiki/UML.-%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8))
 
@@ -13,12 +13,6 @@
 
 Творец - [Мария Бартель](https://github.com/mariabartel) ([Сайт](http://paul.1gb.ru/stankin/oop/sandbox/idb-13-13/Bartel/) | [Статья](https://github.com/stankin/oop/wiki/%D0%A2%D0%B5%D0%B3%D0%B8-HTML.-Style))
 
-[Модуль для работы с телегам ботом node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
-
-[Модуль для парсигна сайта yadnex.ru](https://github.com/rchipka/node-osmosis)
-
-
-Данный бот позволяет создавать 
 
 ## Установка
 Для начала понадобится установить Node.js [официальный сайт](https://nodejs.org/en/)
@@ -39,3 +33,18 @@ node app.js
 ```bash
 nodemon app.js
 ```
+
+Команды, которые выполняет бот:
+- /напомни %заметка% в hh:mm (при установке времени )
+- /заметки (вывод всех заметок с заданным временем)
+- /удалить (удаление заметок с заданным временем)
+- /курс (курс доллара с yandex.ru)
+- /запомни (запись заметки без временного ограничения)
+- /напоминания (вывод всех заметок без временного ограничения)
+- /удалитьнапоминания (удаление всех заметок без временного ограничения)
+
+### Модули:
+[Модуль для работы с телегам ботом node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
+
+[Модуль для парсигна сайта yadnex.ru](https://github.com/rchipka/node-osmosis)
+
