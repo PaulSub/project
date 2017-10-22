@@ -20,6 +20,7 @@
 
 Данный бот позволяет создавать 
 ## Команды
+```javascript
 var options = {
       reply_markup: JSON.stringify({
         inline_keyboard: [
@@ -33,3 +34,4 @@ var options = {
         ]
       })
     };
+```
