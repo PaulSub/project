@@ -51,3 +51,4 @@ nodemon app.js
 
 [Модуль для парсигна сайта yadnex.ru](https://github.com/rchipka/node-osmosis)
 
+[Telegram API](https://core.telegram.org/bots/api)
