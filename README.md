@@ -46,9 +46,11 @@ nodemon app.js
 - /напоминания (вывод всех заметок без временного ограничения)
 - /удалитьнапоминания (удаление всех заметок без временного ограничения)
 
-### Модули:
+### Ссылки на официальные репозитории и документации:
 [Модуль для работы с телегам ботом node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
 
 [Модуль для парсигна сайта yadnex.ru](https://github.com/rchipka/node-osmosis)
 
 [Telegram API](https://core.telegram.org/bots/api)
+
+
